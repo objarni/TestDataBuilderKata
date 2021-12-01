@@ -1,7 +1,7 @@
 #include <cgreen/cgreen.h>
 #include "test_channel.c"
 
-TestSuite *sample_tests() {
+TestSuite *channel_tests_suite() {
     TestSuite *suite = create_test_suite();
     add_test_with_context(suite, Channel, test_1);
     return suite;
@@ -10,7 +10,7 @@ TestSuite *sample_tests() {
 
 int main(int argc, char **argv) {
     TestSuite *suite = create_test_suite();
-    add_suite(suite, sample_tests());
+    add_suite(suite, channel_tests_suite());
     if (argc > 1) {
         return run_single_test(suite, argv[1], create_text_reporter());
     }
