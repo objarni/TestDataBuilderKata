@@ -3,7 +3,7 @@
 
 TestSuite *sample_tests() {
     TestSuite *suite = create_test_suite();
-    add_test_with_context(suite, Sample, test_1);
+    add_test_with_context(suite, Channel, test_1);
     return suite;
 }
 
