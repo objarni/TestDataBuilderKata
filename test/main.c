@@ -1,16 +1,17 @@
 #include <cgreen/cgreen.h>
 #include "test_channel.c"
 
-TestSuite *channel_tests_suite() {
+TestSuite *ipaddress_suite() {
     TestSuite *suite = create_test_suite();
     add_test_with_context(suite, Channel, the_default_address);
+    add_test_with_context(suite, Channel, switching_to_a_famous_ip_address);
     return suite;
 }
 
 
 int main(int argc, char **argv) {
     TestSuite *suite = create_test_suite();
-    add_suite(suite, channel_tests_suite());
+    add_suite(suite, ipaddress_suite());
     if (argc > 1) {
         return run_single_test(suite, argv[1], create_text_reporter());
     }

@@ -28,13 +28,4 @@ Ensure(Channel, switching_to_a_famous_ip_address) {
 }
 
 /*
-        IPAddress address = buildIPAddress(
-                withIP(1, 1, 1, 1,
-                    anIPAddress())
-
-        );
-        REQUIRE(address.bytes[0] == 1);
-        REQUIRE(address.bytes[1] == 1);
-        REQUIRE(address.bytes[2] == 1);
-        REQUIRE(address.bytes[3] == 1);
  */

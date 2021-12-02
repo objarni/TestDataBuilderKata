@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 set(CMAKE_VERBOSE_MAKEFILE ON)
-project(Sample VERSION 1.0
+project(TestDataBuildersInC VERSION 1.0
         DESCRIPTION "Test Data Builder pattern in C")
 
 set(CMAKE_C_STANDARD 11)
