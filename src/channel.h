@@ -1,6 +1,5 @@
-#ifndef SAMPLE_H
-#define SAMPLE_H
+#pragma once
 
-// write your code here
-
-#endif //SAMPLE_H
+typedef struct {
+    char bytes[4];
+} IPAddress;

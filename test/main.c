@@ -3,7 +3,7 @@
 
 TestSuite *channel_tests_suite() {
     TestSuite *suite = create_test_suite();
-    add_test_with_context(suite, Channel, the_default_channel);
+    add_test_with_context(suite, Channel, the_default_address);
     return suite;
 }
 
