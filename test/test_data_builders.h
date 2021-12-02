@@ -9,3 +9,4 @@ typedef struct {
 IPAddressBuilderStruct anIPAddress();
 
 IPAddress buildIPAddress(IPAddressBuilderStruct abs);
+IPAddressBuilderStruct withIP(char a, char b, char c, char d, IPAddressBuilderStruct builder);
