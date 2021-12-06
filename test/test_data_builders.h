@@ -16,3 +16,4 @@ typedef struct {
 } ChannelBuilderStruct;
 ChannelBuilderStruct aChannel();
 Channel buildChannel(ChannelBuilderStruct builder);
+ChannelBuilderStruct withPort(int port, ChannelBuilderStruct builder);

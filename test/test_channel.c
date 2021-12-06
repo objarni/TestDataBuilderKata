@@ -36,3 +36,10 @@ Ensure(Channel, the_default_channel) {
     assert_that(channel.address.bytes[3], is_equal_to(1));
     assert_that(channel.protocol, is_equal_to(LEGACY_TCP));
 }
+
+Ensure(Channel, setting_port_to_2) {
+    Channel channel = buildChannel(
+            withPort(2, aChannel())
+    );
+    assert_that(channel.port, is_equal_to(2));
+}

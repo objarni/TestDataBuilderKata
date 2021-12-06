@@ -34,3 +34,9 @@ Channel buildChannel(ChannelBuilderStruct builder) {
     };
     return channel;
 }
+
+ChannelBuilderStruct withPort(int port, ChannelBuilderStruct builder) {
+    builder.port = port;
+    return builder;
+}
+
