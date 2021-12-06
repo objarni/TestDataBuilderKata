@@ -2,7 +2,7 @@
 #include "channel.h"
 
 IPAddressBuilderStruct anIPAddress() {
-    IPAddressBuilderStruct builder = { .bytes = {127, 0, 0, 1 } };
+    IPAddressBuilderStruct builder = {.bytes = {127, 0, 0, 1}};
     return builder;
 }
 
@@ -14,26 +14,23 @@ IPAddressBuilderStruct withIP(char a, char b, char c, char d, IPAddressBuilderSt
     return builder;
 }
 
-IPAddress buildIPAddress(IPAddressBuilderStruct abs) {
-    IPAddress ipaddress = { .bytes = {abs.bytes[0], abs.bytes[1], abs.bytes[2], abs.bytes[3] } };
+IPAddress buildIPAddress(IPAddressBuilderStruct builder) {
+    IPAddress ipaddress = {.bytes = {builder.bytes[0], builder.bytes[1], builder.bytes[2], builder.bytes[3]}};
     return ipaddress;
 }
 
-struct ChannelBuilderStruct {
-    int port;
-    IPAddress address;
-};
-
 ChannelBuilderStruct aChannel() {
     ChannelBuilderStruct builder = {
-        .port = 1,
+            .port = 1,
+            .address = buildIPAddress(anIPAddress()),
     };
     return builder;
 }
 
-Channel buildChannel(ChannelBuilderStruct cbs) {
+Channel buildChannel(ChannelBuilderStruct builder) {
     Channel channel = {
-            .port = cbs.port,
+            .port = builder.port,
+            .address = builder.address,
     };
     return channel;
 }

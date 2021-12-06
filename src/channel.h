@@ -6,4 +6,5 @@ typedef struct {
 
 typedef struct {
     int port;
+    IPAddress address;
 } Channel;

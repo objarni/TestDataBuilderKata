@@ -30,9 +30,9 @@ Ensure(Channel, switching_to_a_famous_ip_address) {
 Ensure(Channel, the_default_channel) {
     Channel channel = buildChannel(aChannel());
     assert_that(channel.port, is_equal_to(1));
+    assert_that(channel.address.bytes[0], is_equal_to(127));
+    assert_that(channel.address.bytes[1], is_equal_to(0));
+    assert_that(channel.address.bytes[2], is_equal_to(0));
+    assert_that(channel.address.bytes[3], is_equal_to(1));
 //    REQUIRE(channel.protocol == LEGACY_TCP);
-//    REQUIRE(channel.address.bytes[0] == 127);
-//    REQUIRE(channel.address.bytes[1] == 0);
-//    REQUIRE(channel.address.bytes[2] == 0);
-//    REQUIRE(channel.address.bytes[3] == 1);
 }

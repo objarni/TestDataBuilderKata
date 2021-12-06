@@ -12,6 +12,7 @@ IPAddressBuilderStruct withIP(char a, char b, char c, char d, IPAddressBuilderSt
 // Channel
 typedef struct {
     int port;
+    IPAddress address;
 } ChannelBuilderStruct;
 ChannelBuilderStruct aChannel();
 Channel buildChannel(ChannelBuilderStruct builder);
