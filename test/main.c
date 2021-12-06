@@ -10,6 +10,7 @@ TestSuite *ipaddress_suite() {
     add_test_with_context(suite, Channel, setting_protocol_to_legacy_udp);
     add_test_with_context(suite, Channel, setting_2_channel_parameters);
     add_test_with_context(suite, Channel, setting_address_of_channel);
+    add_test_with_context(suite, Channel, setting_simple_and_nested_fields);
     return suite;
 }
 
