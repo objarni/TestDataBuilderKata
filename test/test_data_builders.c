@@ -19,3 +19,21 @@ IPAddress buildIPAddress(IPAddressBuilderStruct abs) {
     return ipaddress;
 }
 
+struct ChannelBuilderStruct {
+    int port;
+    IPAddress address;
+};
+
+ChannelBuilderStruct aChannel() {
+    ChannelBuilderStruct builder = {
+        .port = 1,
+    };
+    return builder;
+}
+
+Channel buildChannel(ChannelBuilderStruct cbs) {
+    Channel channel = {
+            .port = cbs.port,
+    };
+    return channel;
+}
