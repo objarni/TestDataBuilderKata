@@ -139,6 +139,8 @@ TEST_CASE ("ChannelBuilder") {
     }
 }
 
+
+/* BELOW: Converted to cgreen
 TEST_CASE ("IPAdressBuilder") {
     SECTION("the default address") {
         IPAddress address = buildIPAddress(anIPAddress());
@@ -159,5 +161,4 @@ TEST_CASE ("IPAdressBuilder") {
         REQUIRE(address.bytes[3] == 1);
     }
 }
-
-
+*/
