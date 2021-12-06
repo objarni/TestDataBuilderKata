@@ -77,15 +77,6 @@ Channel buildChannel(ChannelBuilderStruct cbs) {
 }
 
 TEST_CASE ("ChannelBuilder") {
-    SECTION("the default channel") {
-        Channel channel = buildChannel(aChannel());
-        REQUIRE(channel.port == 1);
-        REQUIRE(channel.protocol == LEGACY_TCP);
-        REQUIRE(channel.address.bytes[0] == 127);
-        REQUIRE(channel.address.bytes[1] == 0);
-        REQUIRE(channel.address.bytes[2] == 0);
-        REQUIRE(channel.address.bytes[3] == 1);
-    }
     SECTION("setting port to 2") {
         Channel channel = buildChannel(
                 withPort(2, aChannel())
@@ -161,4 +152,14 @@ TEST_CASE ("IPAdressBuilder") {
         REQUIRE(address.bytes[3] == 1);
     }
 }
-*/
+    SECTION("the default channel") {
+        Channel channel = buildChannel(aChannel());
+        REQUIRE(channel.port == 1);
+        REQUIRE(channel.protocol == LEGACY_TCP);
+        REQUIRE(channel.address.bytes[0] == 127);
+        REQUIRE(channel.address.bytes[1] == 0);
+        REQUIRE(channel.address.bytes[2] == 0);
+        REQUIRE(channel.address.bytes[3] == 1);
+    }
+
+ */
