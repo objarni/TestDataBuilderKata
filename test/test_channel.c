@@ -39,14 +39,16 @@ Ensure(Channel, the_default_channel) {
 
 Ensure(Channel, setting_port_to_2) {
     Channel channel = buildChannel(
-            withPort(2, aChannel())
+            withPort(2,
+            aChannel())
     );
     assert_that(channel.port, is_equal_to(2));
 }
 
 Ensure(Channel, setting_protocol_to_legacy_udp) {
     Channel channel = buildChannel(
-            withProtocol(LEGACY_UDP, aChannel())
+            withProtocol(LEGACY_UDP,
+            aChannel())
     );
     assert_that(channel.protocol, is_equal_to(LEGACY_UDP));
 }
@@ -54,8 +56,8 @@ Ensure(Channel, setting_protocol_to_legacy_udp) {
 Ensure(Channel, setting_2_channel_parameters) {
     Channel channel = buildChannel(
             withPort(2,
-                     withProtocol(LEGACY_UDP,
-                                  aChannel()))
+            withProtocol(LEGACY_UDP,
+            aChannel()))
     );
     assert_that(channel.port, is_equal_to(2));
     assert_that(channel.protocol, is_equal_to(LEGACY_UDP));
@@ -63,11 +65,8 @@ Ensure(Channel, setting_2_channel_parameters) {
 
 Ensure(Channel, setting_address_of_channel) {
     Channel channel = buildChannel(
-            withChannelAddress(
-                    buildIPAddress(
-                            withIP(1, 1, 1, 1, anIPAddress())
-                    ),
-                    aChannel())
+            withChannelAddress(buildIPAddress(withIP(1, 1, 1, 1, anIPAddress())),
+            aChannel())
     );
     assert_that(channel.address.bytes[0], is_equal_to(1));
     assert_that(channel.address.bytes[1], is_equal_to(1));
@@ -78,13 +77,14 @@ Ensure(Channel, setting_address_of_channel) {
 Ensure(Channel, setting_simple_and_nested_fields) {
     Channel channel = buildChannel(
             withPort(2,
-                     withProtocol(LEGACY_UDP,
-                                  withChannelAddress(
-                                          buildIPAddress(
-                                                  withIP(1, 1, 1, 1, anIPAddress())
-                                          ),
-                                          aChannel()))
-            ));
+            withProtocol(LEGACY_UDP,
+            withChannelAddress(
+                buildIPAddress(
+                    withIP(1, 1, 1, 1,
+                    anIPAddress())
+                ),
+            aChannel()))
+    ));
     assert_that(channel.port, is_equal_to(2));
     assert_that(channel.protocol, is_equal_to(LEGACY_UDP));
     assert_that(channel.address.bytes[0], is_equal_to(1));
