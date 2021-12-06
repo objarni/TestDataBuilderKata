@@ -6,6 +6,7 @@ typedef struct {
 
 typedef enum {
     LEGACY_TCP,
+    LEGACY_UDP,
 } Protocol;
 
 typedef struct {

@@ -77,18 +77,6 @@ Channel buildChannel(ChannelBuilderStruct cbs) {
 }
 
 TEST_CASE ("ChannelBuilder") {
-    SECTION("setting port to 2") {
-        Channel channel = buildChannel(
-                withPort(2, aChannel())
-        );
-        REQUIRE(channel.port == 2);
-    }
-    SECTION("setting protocol to LEGACY_UDP") {
-        Channel channel = buildChannel(
-                withProtocol(LEGACY_UDP, aChannel())
-        );
-        REQUIRE(channel.protocol == LEGACY_UDP);
-    }
     SECTION("setting ip address") {
         Channel channel = buildChannel(
                 withChannelAddress(
@@ -152,6 +140,7 @@ TEST_CASE ("IPAdressBuilder") {
         REQUIRE(address.bytes[3] == 1);
     }
 }
+
     SECTION("the default channel") {
         Channel channel = buildChannel(aChannel());
         REQUIRE(channel.port == 1);
@@ -160,6 +149,18 @@ TEST_CASE ("IPAdressBuilder") {
         REQUIRE(channel.address.bytes[1] == 0);
         REQUIRE(channel.address.bytes[2] == 0);
         REQUIRE(channel.address.bytes[3] == 1);
+    }
+    SECTION("setting port to 2") {
+        Channel channel = buildChannel(
+                withPort(2, aChannel())
+        );
+        REQUIRE(channel.port == 2);
+    }
+    SECTION("setting protocol to LEGACY_UDP") {
+        Channel channel = buildChannel(
+                withProtocol(LEGACY_UDP, aChannel())
+        );
+        REQUIRE(channel.protocol == LEGACY_UDP);
     }
 
  */

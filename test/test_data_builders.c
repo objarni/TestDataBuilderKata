@@ -31,6 +31,7 @@ Channel buildChannel(ChannelBuilderStruct builder) {
     Channel channel = {
             .port = builder.port,
             .address = builder.address,
+            .protocol = builder.protocol,
     };
     return channel;
 }
@@ -40,3 +41,7 @@ ChannelBuilderStruct withPort(int port, ChannelBuilderStruct builder) {
     return builder;
 }
 
+ChannelBuilderStruct withProtocol(Protocol protocol, ChannelBuilderStruct builder) {
+    builder.protocol = protocol;
+    return builder;
+}
