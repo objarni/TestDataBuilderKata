@@ -46,7 +46,7 @@ Ensure(Channel, setting_port_to_2) {
 
 Ensure(Channel, setting_protocol_to_legacy_udp) {
     Channel channel = buildChannel(
-        withProtocol(LEGACY_UDP, aChannel())
+            withProtocol(LEGACY_UDP, aChannel())
     );
     assert_that(channel.protocol, is_equal_to(LEGACY_UDP));
 }
@@ -54,7 +54,7 @@ Ensure(Channel, setting_protocol_to_legacy_udp) {
 Ensure(Channel, setting_2_channel_parameters) {
     Channel channel = buildChannel(
             withPort(2,
-        withProtocol(LEGACY_UDP, aChannel()))
+                     withProtocol(LEGACY_UDP, aChannel()))
     );
     assert_that(channel.port, is_equal_to(2));
     assert_that(channel.protocol, is_equal_to(LEGACY_UDP));

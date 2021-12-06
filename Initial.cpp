@@ -76,27 +76,6 @@ Channel buildChannel(ChannelBuilderStruct cbs) {
     return channel;
 }
 
-TEST_CASE ("ChannelBuilder") {
-    SECTION("setting simple and nested fields") {
-        Channel channel = buildChannel(
-                    withPort(2,
-                    withProtocol(LEGACY_UDP,
-                    withChannelAddress(
-                        buildIPAddress(
-                                withIP(1, 1, 1, 1, anIPAddress())
-                        ),
-                        aChannel()))
-        ));
-        REQUIRE(channel.port == 2);
-        REQUIRE(channel.protocol == LEGACY_UDP);
-        REQUIRE(channel.address.bytes[0] == 1);
-        REQUIRE(channel.address.bytes[1] == 1);
-        REQUIRE(channel.address.bytes[2] == 1);
-        REQUIRE(channel.address.bytes[3] == 1);
-    }
-}
-
-
 /* BELOW: Converted to cgreen
 TEST_CASE ("IPAdressBuilder") {
     SECTION("the default address") {
