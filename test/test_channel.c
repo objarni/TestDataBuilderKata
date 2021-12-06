@@ -34,5 +34,5 @@ Ensure(Channel, the_default_channel) {
     assert_that(channel.address.bytes[1], is_equal_to(0));
     assert_that(channel.address.bytes[2], is_equal_to(0));
     assert_that(channel.address.bytes[3], is_equal_to(1));
-//    REQUIRE(channel.protocol == LEGACY_TCP);
+    assert_that(channel.protocol, is_equal_to(LEGACY_TCP));
 }
