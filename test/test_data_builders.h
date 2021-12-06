@@ -27,3 +27,5 @@ Channel buildChannel(ChannelBuilderStruct builder);
 ChannelBuilderStruct withPort(int port, ChannelBuilderStruct builder);
 
 ChannelBuilderStruct withProtocol(Protocol protocol, ChannelBuilderStruct builder);
+
+ChannelBuilderStruct withChannelAddress(IPAddress address, ChannelBuilderStruct builder);

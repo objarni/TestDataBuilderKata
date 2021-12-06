@@ -45,3 +45,8 @@ ChannelBuilderStruct withProtocol(Protocol protocol, ChannelBuilderStruct builde
     builder.protocol = protocol;
     return builder;
 }
+
+ChannelBuilderStruct withChannelAddress(IPAddress address, ChannelBuilderStruct builder) {
+    builder.address = address;
+    return builder;
+}

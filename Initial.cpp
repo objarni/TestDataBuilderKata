@@ -77,28 +77,6 @@ Channel buildChannel(ChannelBuilderStruct cbs) {
 }
 
 TEST_CASE ("ChannelBuilder") {
-    SECTION("setting ip address") {
-        Channel channel = buildChannel(
-                withChannelAddress(
-                        buildIPAddress(
-                        withIP(1, 1, 1, 1, anIPAddress())
-                ),
-                aChannel())
-        );
-        REQUIRE(channel.address.bytes[0] == 1);
-        REQUIRE(channel.address.bytes[1] == 1);
-        REQUIRE(channel.address.bytes[2] == 1);
-        REQUIRE(channel.address.bytes[3] == 1);
-    }
-    SECTION("setting 2 parameters") {
-        Channel channel = buildChannel(
-                withPort(2,
-                         withProtocol(LEGACY_UDP,
-                                      aChannel()))
-        );
-        REQUIRE(channel.port == 2);
-        REQUIRE(channel.protocol == LEGACY_UDP);
-    }
     SECTION("setting simple and nested fields") {
         Channel channel = buildChannel(
                     withPort(2,
@@ -162,5 +140,26 @@ TEST_CASE ("IPAdressBuilder") {
         );
         REQUIRE(channel.protocol == LEGACY_UDP);
     }
-
+    SECTION("setting 2 parameters") {
+        Channel channel = buildChannel(
+                withPort(2,
+                         withProtocol(LEGACY_UDP,
+                                      aChannel()))
+        );
+        REQUIRE(channel.port == 2);
+        REQUIRE(channel.protocol == LEGACY_UDP);
+    }
+    SECTION("setting ip address") {
+        Channel channel = buildChannel(
+                withChannelAddress(
+                        buildIPAddress(
+                        withIP(1, 1, 1, 1, anIPAddress())
+                ),
+                aChannel())
+        );
+        REQUIRE(channel.address.bytes[0] == 1);
+        REQUIRE(channel.address.bytes[1] == 1);
+        REQUIRE(channel.address.bytes[2] == 1);
+        REQUIRE(channel.address.bytes[3] == 1);
+    }
  */
