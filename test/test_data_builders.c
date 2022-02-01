@@ -1,3 +1,4 @@
+#include <cgreen/cgreen.h>
 #include "test_data_builders.h"
 #include "channel.h"
 
@@ -32,6 +33,8 @@ Channel buildChannel(ChannelBuilderStruct builder) {
             .port = builder.port,
             .address = builder.address,
             .protocol = builder.protocol,
+            .connected = builder.connected,
+            .bufferFull = builder.bufferFull,
     };
     return channel;
 }
@@ -48,5 +51,25 @@ ChannelBuilderStruct withProtocol(Protocol protocol, ChannelBuilderStruct builde
 
 ChannelBuilderStruct withChannelAddress(IPAddress address, ChannelBuilderStruct builder) {
     builder.address = address;
+    return builder;
+}
+
+ChannelBuilderStruct withConnection(ChannelBuilderStruct builder) {
+    builder.connected = 1;
+    return builder;
+}
+
+ChannelBuilderStruct withoutConnection(ChannelBuilderStruct builder) {
+    builder.connected = 0;
+    return builder;
+}
+
+ChannelBuilderStruct withFullBuffer(ChannelBuilderStruct builder) {
+    builder.bufferFull = 1;
+    return builder;
+}
+
+ChannelBuilderStruct withEmptyBuffer(ChannelBuilderStruct builder) {
+    builder.bufferFull = 0;
     return builder;
 }

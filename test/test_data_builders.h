@@ -18,6 +18,8 @@ typedef struct {
     int port;
     IPAddress address;
     Protocol protocol;
+    int connected;
+    int bufferFull;
 } ChannelBuilderStruct;
 
 ChannelBuilderStruct aChannel();
@@ -29,3 +31,11 @@ ChannelBuilderStruct withPort(int port, ChannelBuilderStruct builder);
 ChannelBuilderStruct withProtocol(Protocol protocol, ChannelBuilderStruct builder);
 
 ChannelBuilderStruct withChannelAddress(IPAddress address, ChannelBuilderStruct builder);
+
+ChannelBuilderStruct withConnection(ChannelBuilderStruct builder);
+
+ChannelBuilderStruct withoutConnection(ChannelBuilderStruct builder);
+
+ChannelBuilderStruct withFullBuffer(ChannelBuilderStruct builder);
+
+ChannelBuilderStruct withEmptyBuffer(ChannelBuilderStruct builder);
